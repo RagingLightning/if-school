@@ -2,8 +2,6 @@ package code.sem1.einstieg;
 
 import de.r13g.lib.console.ConsoleExt;
 
-import java.text.DecimalFormat;
-
 public class Kreisberechnung {
 
   public static void main(String[] args) {
