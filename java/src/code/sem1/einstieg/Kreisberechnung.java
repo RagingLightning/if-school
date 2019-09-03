@@ -9,11 +9,11 @@ public class Kreisberechnung {
     double radius = ConsoleExt.getInputDouble("Radius");
     double height = ConsoleExt.getInputDouble("Höhe");
     double area = Math.PI * radius * radius;
-    double circumfrence = 2 * Math.PI * radius;
+    double circumference = 2 * Math.PI * radius;
     double volume = area * height;
 
     System.out.printf("Grundfläche: %.2f" + "%n", area);
-    System.out.printf("Umfang: %.2f" + "%n", circumfrence);
+    System.out.printf("Umfang: %.2f" + "%n", circumference);
     System.out.printf("Volumen: %.2f" + "%n", volume);
   }
 }
