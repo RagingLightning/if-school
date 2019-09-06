@@ -1,4 +1,4 @@
-package code.sem1.einstieg;
+package code.sem1;
 
 import de.r13g.lib.console.ConsoleExt;
 
