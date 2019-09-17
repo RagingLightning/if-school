@@ -1,0 +1,10 @@
+a -> 0
+b -> 01
+c -> 011
+d -> 111
+
+01111      +
+0111101101 +
+1110111101 +
+
+nicht prefixfrei, aber eindeutig dekodierbar
