@@ -5,3 +5,6 @@ bin
 
 #struktogrammeditor
 .bak
+
+#Vim
+.swp
