@@ -1,0 +1,17 @@
+unkom = "a a b b b c d d d d d e"
+
+ i | b | x | kom
+     0   1
+ 0   a   1   0
+ 1   a   2   0
+ 2   b   1   0a
+ 3   b   2   0a
+ 4   b   3   0a
+ 5   c   1   0ab3
+ 6   d   1   0ab3c
+ 7   d   2   0ab3c
+ 8   d   3   0ab3c
+ 9   d   4   0ab3c
+10   d   5   0ab3c
+11   e   1   0ab3c5d
+---  e   1   0ab3c5de

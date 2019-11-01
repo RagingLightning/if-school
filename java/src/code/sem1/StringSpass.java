@@ -3,6 +3,7 @@ package code.sem1;
 import de.r13g.lib.AdvancedString;
 import de.r13g.lib.console.ConsoleExt;
 
+@SuppressWarnings("unused")
 public class StringSpass {
 
   public static void main(String[] args) {
