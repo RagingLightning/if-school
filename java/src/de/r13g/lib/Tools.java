@@ -3,9 +3,9 @@ package de.r13g.lib;
 public class Tools {
 
 	/**
-	 * Eine Funktion, um zu prüfen, ob eine Zahl eine Primzahl ist
+	 * Eine Funktion, um zu prÃ¼fen, ob eine Zahl eine Primzahl ist
 	 * 
-	 * @param  n  die zu prüfende Zahl
+	 * @param  n  die zu prÃ¼fende Zahl
 	 * @return    Wahrheitswert, true: Primzahl, false: keine Primzahl
 	 */ 
 
@@ -14,18 +14,18 @@ public class Tools {
 			return false;
 		}
 
-		for (int i = 2; i < n; i++) { //Für alle Zahlen von 2 bis n-1
+		for (int i = 2; i < n; i++) { //FÃ¼r alle Zahlen von 2 bis n-1
 			if (n % i == 0) return false; //Wenn n durch i teilbar, ist n keine Primzahl
 		} // end of for
 		return true; // Andernfalls ist n eine Primzahl
 	}
 
 	/**
-	 * Eine Funktion, die eine Zufällige Gannzahl zwischen zwei Werten zurückgibt
+	 * Eine Funktion, die eine ZufÃ¤llige Gannzahl zwischen zwei Werten zurï¿½ckgibt
 	 * 
 	 * @param  lower  die untere Grenze des Zufallswertes (inklusive)
 	 * @param  upper  die obere Grenze des Zufallwertes (inklusive)
-	 * @return   int  die Zufällige Ganzzahl
+	 * @return   int  die ZufÃ¤llige Ganzzahl
 	 */
 
 	public static int randomInt(int lower, int upper) {
@@ -33,11 +33,11 @@ public class Tools {
 	}
 	
   /**
-   * Eine Funktion, die eine Zufällige Gleitkommazahl zwischen zwei Werten zurückgibt
+   * Eine Funktion, die eine ZufÃ¤llige Gleitkommazahl zwischen zwei Werten zurï¿½ckgibt
    * 
    * @param  lower  die untere Grenze des Zufallswertes (inklusive)
    * @param  upper  die obere Grenze des Zufallwertes (inklusive)
-   * @return double die Zufällige Ganzzahl
+   * @return double die ZufÃ¤llige Ganzzahl
    */
 
   public static double randomDouble(double lower, double upper) {
@@ -66,6 +66,22 @@ public class Tools {
 			} 
 		}
 		return c;
+	}
+
+	/**
+	 *
+	 */
+	public static String runLengthEncoding(String string, int preset) {
+		AdvancedString s = AdvancedString.fromString(string);
+		StringBuilder coded = new StringBuilder();
+		int i = 0;
+		while (i < string.length()) {
+			int d = s.longestRun(i);
+			if(preset==0){coded.append(s.toString().charAt(i)).append(d);}
+			if(preset==1){coded.append(s.toString().charAt(i)).append('[').append(d).append(']');}
+			i += d;
+		}
+		return coded.toString();
 	}
 
 }
