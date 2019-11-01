@@ -1,0 +1,17 @@
+Eingabe string
+int i = 0
+String ausgabe
+while i<string.len
+ char c = str[i]
+ int j 0
+ for j j<str.len-i
+  char a = str[j]
+  a != c : break
+ j<3
+  aus += c
+  j==2 : aus += c
+ else
+  aus += c
+  aus += j
+ i += j
+Ausgb ausgabe
