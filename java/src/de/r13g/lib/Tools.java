@@ -21,7 +21,7 @@ public class Tools {
 	}
 
 	/**
-	 * Eine Funktion, die eine Zufällige Gannzahl zwischen zwei Werten zur�ckgibt
+	 * Eine Funktion, die eine Zufällige Gannzahl zwischen zwei Werten zurückgibt
 	 * 
 	 * @param  lower  die untere Grenze des Zufallswertes (inklusive)
 	 * @param  upper  die obere Grenze des Zufallwertes (inklusive)
@@ -33,7 +33,7 @@ public class Tools {
 	}
 	
   /**
-   * Eine Funktion, die eine Zufällige Gleitkommazahl zwischen zwei Werten zur�ckgibt
+   * Eine Funktion, die eine Zufällige Gleitkommazahl zwischen zwei Werten zurückgibt
    * 
    * @param  lower  die untere Grenze des Zufallswertes (inklusive)
    * @param  upper  die obere Grenze des Zufallwertes (inklusive)
@@ -69,7 +69,13 @@ public class Tools {
 	}
 
 	/**
+	 * compresses a given String using RLE
 	 *
+	 * @param string string to be compressed
+	 * @param preset different RLE schemes
+	 *               - 0: xn - only useable for characters
+	 *               - 1: x[n] - useable for all data
+	 * @return compressed String
 	 */
 	public static String runLengthEncoding(String string, int preset) {
 		AdvancedString s = AdvancedString.fromString(string);

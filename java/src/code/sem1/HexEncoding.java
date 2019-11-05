@@ -2,7 +2,6 @@ package code.sem1;
 
 import de.r13g.lib.console.ConsoleExt;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class HexEncoding {

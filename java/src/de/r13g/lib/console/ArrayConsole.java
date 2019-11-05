@@ -3,7 +3,7 @@ package de.r13g.lib.console;
 public class ArrayConsole {
   
   /**
-   * Gibt ein Array formatiert aus
+   * Gibt ein Double Array formatiert aus
    * 
    * @param name   Der name des Arrays im Tabellenkopf
    * @param array  Das auszugebende Array
@@ -27,7 +27,13 @@ public class ArrayConsole {
       System.out.println(i + " | " + array[i]);
     }
   }
-  
+
+  /**
+   * Gibt ein Integer Array formatiert aus
+   *
+   * @param name   Der name des Arrays im Tabellenkopf
+   * @param array  Das auszugebende Array
+   */
   public static void printIntArray(String name, int[] array) {
     int digits = (String.valueOf(array.length-1)).length();
     for (int i = digits; i > 0 ; i--) {
@@ -46,7 +52,13 @@ public class ArrayConsole {
       System.out.println(i + " | " + array[i]);
     }
   }
-  
+
+  /**
+   * Gibt ein Float Array formatiert aus
+   *
+   * @param name   Der name des Arrays im Tabellenkopf
+   * @param array  Das auszugebende Array
+   */
   public static void printFloatArray(String name, float[] array) {
     int digits = (String.valueOf(array.length-1)).length();
     for (int i = digits; i > 0 ; i--) {
