@@ -49,9 +49,11 @@ public class AdvancedString {
    * @return this with appended String
    */
   public AdvancedString append(String string, int times) {
+    StringBuilder b = new StringBuilder(this.value);
     for (int i = 0; i < times; i++) {
-      this.value += string;
+      b.append(string);
     }
+    this.value = b.toString();
     return this;
   }
 

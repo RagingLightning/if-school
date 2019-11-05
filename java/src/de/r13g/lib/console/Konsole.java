@@ -6,12 +6,12 @@ public class Konsole {
 
   private static BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 
-              /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
-               *  diese als String zurueck.
-               *
-               *  @return Einen Wert vom Typ <tt>String</tt> der die Benutzereingabe enthaelt.
-               */
-  public static String getInputString() {
+  /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
+   *  diese als String zurueck.
+   *
+   *  @return Einen Wert vom Typ <tt>String</tt> der die Benutzereingabe enthaelt.
+   */
+  static String getInputString() {
     while (true) {
       try {
         return br.readLine();
@@ -22,12 +22,12 @@ public class Konsole {
     }
   }
 
-              /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
-               *  diese als Integer zurueck.
-               *
-               *  @return Einen Wert vom Typ <tt>int</tt> der die Benutzereingabe enthaelt.
-               */
-  public static int getInputInt() {
+  /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
+   *  diese als Integer zurueck.
+   *
+   *  @return Einen Wert vom Typ <tt>int</tt> der die Benutzereingabe enthaelt.
+   */
+  static int getInputInt() {
     while (true) {
       try {
         return Integer.parseInt(br.readLine());
@@ -38,12 +38,12 @@ public class Konsole {
     }
   }
 
-              /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
-               *  diese als Double zurueck.
-               *
-               *  @return Einen Wert vom Typ <tt>double</tt> der die Benutzereingabe enthaelt.
-               */
-  public static double getInputDouble() {
+  /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
+   *  diese als Double zurueck.
+   *
+   *  @return Einen Wert vom Typ <tt>double</tt> der die Benutzereingabe enthaelt.
+   */
+  static double getInputDouble() {
     String x;
     while ( true ) {
       try {
@@ -53,7 +53,7 @@ public class Konsole {
       catch (NumberFormatException nfe) {
         System.err.println();
         System.err.println("Fehler bei der Verarbeitung der Eingabe: "
-        + nfe.getLocalizedMessage());
+                + nfe.getLocalizedMessage());
         System.err.println("Eine Fliesskommazahl bitte mit Punkt als Dezimaltrenner eingeben.");
         System.err.println();
       }
@@ -63,12 +63,12 @@ public class Konsole {
     }
   }
 
-              /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
-               *  diese als Char zurueck.
-               *
-               *  @return Einen Wert vom Typ <tt>char</tt> der die Benutzereingabe enthaelt.
-               */
-  public static char getInputChar() {
+  /** Die Methode liest eine Benutzereingabe von der Eingabeaufforderung und gibt
+   *  diese als Char zurueck.
+   *
+   *  @return Einen Wert vom Typ <tt>char</tt> der die Benutzereingabe enthaelt.
+   */
+  static char getInputChar() {
     String buffer;
     while (true) {
       try {
@@ -80,7 +80,7 @@ public class Konsole {
       }
     }
   }
-           
+
 }
          
       
