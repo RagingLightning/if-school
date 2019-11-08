@@ -1,5 +1,6 @@
 package code.jg11.einstieg;
 
+import de.r13g.lib.console.ConsoleExt;
 import de.r13g.lib.console.Konsole;
 
 /*
@@ -19,7 +20,7 @@ public class Kap5 {
   
   public void Aufgabe1u3() {
     System.out.print("Bitte gib eine Zahl ein: ");
-    double z = Konsole.getInputDouble();
+    double z = ConsoleExt.getInputDouble("Zahl");
     if (z<0) {
       System.out.println("Die eingegebene Zahl ist kleiner als null");
     } else if(z==0) {
@@ -34,7 +35,7 @@ public class Kap5 {
     int k = 13634; //int in ct, um rundungsfehler zu vermeiden
     System.out.println("Ihr Guthaben beträgt " + k/100.0 + " €");
     System.out.print("Abzuhebender Betrag: ");
-    int c = (int)Math.floor(Konsole.getInputDouble()*100);
+    int c = (int)Math.floor(ConsoleExt.getInputDouble("Betrag")*100);
     if (c<=k) {
       k -= c;
       System.out.println("Es wurden " + c/100.0 + " € abgehoben.");
@@ -47,18 +48,18 @@ public class Kap5 {
   public void Aufgabe4() {
     System.out.println("**Eingabe Datum**");
     System.out.print("Tag: ");
-    int d = Konsole.getInputInt();
+    int d = ConsoleExt.getInputInt("");
     System.out.print("Monat: ");
-    int m = Konsole.getInputInt();
+    int m = ConsoleExt.getInputInt("");
     System.out.print("Jahr: ");
-    int y = Konsole.getInputInt();
+    int y = ConsoleExt.getInputInt("");
     System.out.println("**Eingabe Geburtsdatum**");
     System.out.print("Tag: ");
-    int bd = Konsole.getInputInt();
+    int bd = ConsoleExt.getInputInt("");
     System.out.print("Monat: ");
-    int bm = Konsole.getInputInt();
+    int bm = ConsoleExt.getInputInt("");
     System.out.print("Jahr: ");
-    int by = Konsole.getInputInt();
+    int by = ConsoleExt.getInputInt("");
     System.out.println(y-by - ((bm > m || bd > d)?1:0));
     
   }
@@ -66,11 +67,11 @@ public class Kap5 {
   public void Aufgabe5(){
     System.out.println("**Rechner**");
     System.out.print("Erste Zahl: ");
-    double z1 = Konsole.getInputDouble();
+    double z1 = ConsoleExt.getInputDouble("");
     System.out.print("Operator: ");
-    char o = Konsole.getInputChar();
+    char o = ConsoleExt.getInputChar("");
     System.out.print("Zweite Zahl: ");
-    double z2 = Konsole.getInputDouble();
+    double z2 = ConsoleExt.getInputDouble("");
     switch (o) {
       case '+': 
         System.out.println(z1+z2);
