@@ -1,6 +1,6 @@
 package de.r13g.lib;
 
-public class ArrayMath {
+public class ArrayTools {
 
   public static int min(int[] array) {
     int min = Integer.MAX_VALUE;
@@ -29,6 +29,17 @@ public class ArrayMath {
   public static double avg(int[] array) {
     int sum = sum(array);
     return sum*1.0 / array.length;
+  }
+
+  public static int[] reverse(int[] array) {
+    int[] reversed = new int[array.length];
+
+    for (int i = 0; i < array.length; i++)
+    {
+      reversed[array.length-1-i] = array[i];
+    }
+
+    return reversed;
   }
 
 }
