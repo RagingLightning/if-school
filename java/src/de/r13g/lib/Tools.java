@@ -29,7 +29,7 @@ public class Tools {
 	 */
 
 	public static int randomInt(int lower, int upper) {
-		return (int)(Math.random()*(upper-lower)+lower); //Verallgemeinert aus Zufall.java
+		return (int)Math.round(Math.random()*(upper-lower)+lower); //Verallgemeinert aus Zufall.java
 	}
 	
   /**
