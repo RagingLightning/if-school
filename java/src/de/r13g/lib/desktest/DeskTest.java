@@ -8,20 +8,20 @@ public class DeskTest {
 
   private File file;
 
-  private DeskTestTask task;
+  private IDeskTestTask task;
 
   private LinkedHashMap<String, String> constants = new LinkedHashMap<>();
   private LinkedHashMap<String, HashMap<Integer, String>> variables = new LinkedHashMap<>();
 
   private int step = 1;
 
-  public void step() {
-
-  }
-
-  public DeskTest(File file, DeskTestTask task) {
+  public DeskTest(File file, IDeskTestTask task) {
     this.file = file;
     this.task = task;
+  }
+
+  public IDeskTestTask getTask() {
+    return task;
   }
 
   public void addConstant(String name, String value) {
@@ -29,11 +29,15 @@ public class DeskTest {
   }
 
   public void addVariableValue(String name, String value) {
+    if (!variables.containsValue(name)) variables.put(name, new HashMap<>());
     variables.get(name).put(step, value);
+    System.out.println(name + ": " + value);
     step += 1;
+    if (task.suspend) task.runThread.suspend();
   }
 
   public void addVariable(String name) {
+    if (!variables.containsValue(name)) variables.put(name, new HashMap<>());
     variables.get(name).put(0, null);
   }
 

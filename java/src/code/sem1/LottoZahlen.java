@@ -3,41 +3,69 @@ package code.sem1;
 import de.r13g.lib.ArrayTools;
 import de.r13g.lib.Tools;
 import de.r13g.lib.desktest.DeskTest;
-import de.r13g.lib.desktest.DeskTestTask;
+import de.r13g.lib.desktest.IDeskTestTask;
 
+import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
 public class LottoZahlen {
 
-  public static void main(String[] args) {
+  static DeskTest test = null;
+  Thread keyListener = null;
+
+  public LottoZahlen() {
     int exp = 4;
-    run((int)Math.pow(10, exp), (int)Math.pow(10, exp));
-    DeskTest test = new DeskTest(new File(""), (Runnable) () -> run());
+    keyListener = new Thread(() -> new KeyListener());
+    test = new DeskTest(new File(""), new TLottoZahlen(1,1));
+    test.getTask().step();
   }
 
-  public class TLottoZahlen implements DeskTestTask {
+  public static void main(String[] args) {
+    new LottoZahlen();
+  }
 
-    Thread runThread = null;
+  public class KeyListener extends KeyAdapter {
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+      if(e.getID() == KeyEvent.KEY_PRESSED && e.getKeyCode() == KeyEvent.VK_SPACE) LottoZahlen.test.getTask().step();
+      if(e.getID() == KeyEvent.KEY_PRESSED && e.getKeyCode() == KeyEvent.VK_ENTER) LottoZahlen.test.getTask().resume();
+    }
+  }
+
+  public class TLottoZahlen extends IDeskTestTask {
+
+    int times;
+    int num;
+
+    public TLottoZahlen(int times, int num) {
+      this.times = times;
+      this.num = num;
+    }
 
     @Override
     public void resume() {
+      suspend = false;
+      if (runThread != null) runThread.resume();
+      else LottoZahlen.run(times, num);
     }
 
     @Override
     public void step() {
-
-    }
-
-    @Override
-    public void run() {
-      LottoZahlen.run(10,10,false);
+      suspend = true;
+      if (runThread != null) runThread.resume();
+      else LottoZahlen.run(times, num);
     }
   }
 
-  public static void run(int times, int num, boolean interrupt) {
+  public static void run(int times, int num) {
+    test.getTask().runThread = Thread.currentThread();
     HashMap<Integer, Integer[]> results = new HashMap<>();
     for (int n=0; n < times; n++) {
       System.out.println(n);
@@ -74,13 +102,15 @@ public class LottoZahlen {
   }
 
   private static Integer[] lottoZahlen(int num) {
+    test.addConstant("num" , String.valueOf(num));
     Integer[] cnt = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     for (int i=0; i < num; i++) {
+      test.addVariableValue("i", String.valueOf(i));
       int random = Tools.randomInt(1,49);
-      //System.out.print("" + random + " - ");
+      test.addVariableValue("random", String.valueOf(random));
       cnt[random-1] += 1;
+      test.addVariableValue("cnt[" + (random-1) + "]", String.valueOf(cnt[random-1]));
     }
-    //System.out.println();
     return cnt;
   }
 }
