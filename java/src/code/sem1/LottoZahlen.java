@@ -21,7 +21,6 @@ public class LottoZahlen {
 
   public LottoZahlen() {
     int exp = 4;
-    keyListener = new Thread(() -> new KeyListener());
     test = new DeskTest(new File(""), new TLottoZahlen(1,1));
     test.getTask().step();
   }
@@ -30,16 +29,7 @@ public class LottoZahlen {
     new LottoZahlen();
   }
 
-  public class KeyListener extends KeyAdapter {
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-      if(e.getID() == KeyEvent.KEY_PRESSED && e.getKeyCode() == KeyEvent.VK_SPACE) LottoZahlen.test.getTask().step();
-      if(e.getID() == KeyEvent.KEY_PRESSED && e.getKeyCode() == KeyEvent.VK_ENTER) LottoZahlen.test.getTask().resume();
-    }
-  }
-
-  public class TLottoZahlen extends IDeskTestTask {
+    public class TLottoZahlen extends IDeskTestTask {
 
     int times;
     int num;

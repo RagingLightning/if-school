@@ -9,6 +9,7 @@ public class DeskTest {
   private File file;
 
   private IDeskTestTask task;
+  private DeskTestKeyListener keyListener;
 
   private LinkedHashMap<String, String> constants = new LinkedHashMap<>();
   private LinkedHashMap<String, HashMap<Integer, String>> variables = new LinkedHashMap<>();
@@ -18,6 +19,8 @@ public class DeskTest {
   public DeskTest(File file, IDeskTestTask task) {
     this.file = file;
     this.task = task;
+    keyListener = new DeskTestKeyListener(this);
+    keyListener.start();
   }
 
   public IDeskTestTask getTask() {
