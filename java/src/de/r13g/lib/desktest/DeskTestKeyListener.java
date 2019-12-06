@@ -24,8 +24,10 @@ public class DeskTestKeyListener extends Thread
   @Override
   public void run()
   {
-    if (doStep) test.getTask().step();
-    else if (doResume) test.getTask().resume();
+    synchronized (DeskTestKeyListener.class) {
+      if (doStep) test.getTask().step();
+      else if (doResume) test.getTask().resume();
+    }
   }
 
   public class KeyListener extends KeyAdapter

@@ -1,13 +1,15 @@
 package de.r13g.lib;
 
+import java.util.List;
+
 public class Tools {
 
 	/**
 	 * Eine Funktion, um zu prüfen, ob eine Zahl eine Primzahl ist
-	 * 
+	 *
 	 * @param  n  die zu prüfende Zahl
 	 * @return    Wahrheitswert, true: Primzahl, false: keine Primzahl
-	 */ 
+	 */
 
 	public static boolean isPrime(int n) {
 		if (n<=1) { //0 und 1 sind keine Primzahlen, negative (aufgrund von Unsicherheit) vorerst auch 
@@ -22,7 +24,7 @@ public class Tools {
 
 	/**
 	 * Eine Funktion, die eine Zufällige Gannzahl zwischen zwei Werten zurückgibt
-	 * 
+	 *
 	 * @param  lower  die untere Grenze des Zufallswertes (inklusive)
 	 * @param  upper  die obere Grenze des Zufallwertes (inklusive)
 	 * @return   int  die Zufällige Ganzzahl
@@ -31,24 +33,24 @@ public class Tools {
 	public static int randomInt(int lower, int upper) {
 		return (int)Math.round(Math.random()*(upper-lower)+lower); //Verallgemeinert aus Zufall.java
 	}
-	
-  /**
-   * Eine Funktion, die eine Zufällige Gleitkommazahl zwischen zwei Werten zurückgibt
-   * 
-   * @param  lower  die untere Grenze des Zufallswertes (inklusive)
-   * @param  upper  die obere Grenze des Zufallwertes (inklusive)
-   * @return double die Zufällige Ganzzahl
-   */
 
-  public static double randomDouble(double lower, double upper) {
-    return Math.random()*(upper-lower)+lower; //Verallgemeinert aus Zufall.java
-  }
+	/**
+	 * Eine Funktion, die eine Zufällige Gleitkommazahl zwischen zwei Werten zurückgibt
+	 *
+	 * @param  lower  die untere Grenze des Zufallswertes (inklusive)
+	 * @param  upper  die obere Grenze des Zufallwertes (inklusive)
+	 * @return double die Zufällige Ganzzahl
+	 */
+
+	public static double randomDouble(double lower, double upper) {
+		return Math.random()*(upper-lower)+lower; //Verallgemeinert aus Zufall.java
+	}
 
 
 	/**
 	 * eine Matrizenmultiplikation [a]*[b]
-	 * 
-	 * 
+	 *
+	 *
 	 * @param a  Erster Operand
 	 * @param b  Zweiter Operand
 	 * @return   Ergebnismatrix
@@ -63,7 +65,7 @@ public class Tools {
 					sum += a[i][k] * b[k][j];
 				}
 				c[i][j] = sum;
-			} 
+			}
 		}
 		return c;
 	}
@@ -90,5 +92,15 @@ public class Tools {
 		return coded.toString();
 	}
 
+	public static int GCD(int a, int b) { return b==0 ? a: GCD(b,a%b);}
+
+	public static int GCD(List<Integer> list) {
+		int result = list.get(0);
+		for (int n : list){
+			result = GCD(n, result);
+			if(result == 1) return 1;
+		}
+		return result;
+	}
 }
 
