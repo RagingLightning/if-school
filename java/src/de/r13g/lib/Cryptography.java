@@ -10,6 +10,7 @@ public class Cryptography {
    * @return         encrypted message
    */
   public static String cesarEncode(int key, String message) {
+    key = key < 0 ? 26 - key : key;
     StringBuilder encoded = new StringBuilder();
     for (int c : message.toUpperCase().toCharArray()) {
       encoded.append(((char)((c+key-65)%26)+65));
@@ -25,11 +26,8 @@ public class Cryptography {
    * @return         decrypted message
    */
   public static String cesarDecode(int key, String encoded) {
-    StringBuilder message = new StringBuilder();
-    for (int c : encoded.toUpperCase().toCharArray()) {
-      message.append(((char)((c-key-65+260000000)%26)+65));
-    }
-    return message.toString();
+    key = key < 0 ? 26 - key : key;
+    return cesarEncode(-key, encoded);
   }
 
 }
