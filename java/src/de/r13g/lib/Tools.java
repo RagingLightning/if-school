@@ -92,8 +92,21 @@ public class Tools {
 		return coded.toString();
 	}
 
+	/**
+	 * returns the greatest common divider (GCD) of two numbers
+	 *
+	 * @param a NUM1
+	 * @param b NUM2
+	 * @return  GCD
+	 */
 	public static int GCD(int a, int b) { return b==0 ? a: GCD(b,a%b);}
 
+	/**
+	 * returns the greatest common divider (GCD) of all values in a given List
+	 *
+	 * @param list list of all numbers
+	 * @return GCD
+	 */
 	public static int GCD(List<Integer> list) {
 		int result = list.get(0);
 		for (int n : list){
