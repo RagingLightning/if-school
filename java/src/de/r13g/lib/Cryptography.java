@@ -27,7 +27,7 @@ public class Cryptography {
   public static String cesarDecode(int key, String encoded) {
     StringBuilder message = new StringBuilder();
     for (int c : encoded.toUpperCase().toCharArray()) {
-      message.append(((char)((c-key-65)%26)+65));
+      message.append(((char)((c-key-65+260000000)%26)+65));
     }
     return message.toString();
   }
