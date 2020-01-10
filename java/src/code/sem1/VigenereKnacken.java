@@ -48,8 +48,8 @@ public class VigenereKnacken {
     }
   }
 
-  private static void probabilities() {
+ /* private static void probabilities() {
     for (int i = )
-  }
+  }*/
 
 }
