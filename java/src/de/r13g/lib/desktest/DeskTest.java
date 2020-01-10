@@ -10,15 +10,18 @@ public class DeskTest {
 
   private IDeskTestTask task;
   private DeskTestKeyListener keyListener;
+  private boolean output;
 
   private LinkedHashMap<String, String> constants = new LinkedHashMap<>();
   private LinkedHashMap<String, HashMap<Integer, String>> variables = new LinkedHashMap<>();
 
   private int step = 1;
 
-  public DeskTest(File file, IDeskTestTask task) {
+  public DeskTest(File file, IDeskTestTask task, boolean output) {
     this.file = file;
     this.task = task;
+    this.output = output;
+    this.result = result;
     keyListener = new DeskTestKeyListener(this);
     keyListener.start();
   }
@@ -34,7 +37,8 @@ public class DeskTest {
   public void addVariableValue(String name, String value) {
     if (!variables.containsValue(name)) variables.put(name, new HashMap<>());
     variables.get(name).put(step, value);
-    System.out.println(name + ": " + value);
+    if (output)
+     System.out.println(name + ": " + value);
     step += 1;
     if (task.suspend) task.runThread.suspend();
   }
@@ -42,6 +46,13 @@ public class DeskTest {
   public void addVariable(String name) {
     if (!variables.containsValue(name)) variables.put(name, new HashMap<>());
     variables.get(name).put(0, null);
+  }
+
+  public void printResults() {
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    for ()
   }
 
 }

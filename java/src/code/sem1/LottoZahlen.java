@@ -21,15 +21,15 @@ public class LottoZahlen {
 
   public LottoZahlen() {
     int exp = 4;
-    test = new DeskTest(new File(""), new TLottoZahlen(1,1));
-    test.getTask().step();
+    test = new DeskTest(new File(""), new TLottoZahlen(3,16), false);
+    test.getTask().resume();
   }
 
   public static void main(String[] args) {
     new LottoZahlen();
   }
 
-    public class TLottoZahlen extends IDeskTestTask {
+  public class TLottoZahlen extends IDeskTestTask {
 
     int times;
     int num;
@@ -88,6 +88,8 @@ public class LottoZahlen {
       maxMaxCountIdx = maxCount.get(k) > maxCount.get(maxMaxCountIdx) ? k : maxMaxCountIdx;
     }
     System.out.println("Max: " + maxMaxCountIdx + " (" + maxCount.get(maxMaxCountIdx) + "/" + (maxCount.get(maxMaxCountIdx)*1.0/times)*100 + ")");
+
+    test.printResults();
 
   }
 
