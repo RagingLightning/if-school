@@ -21,7 +21,6 @@ public class DeskTest {
     this.file = file;
     this.task = task;
     this.output = output;
-    this.result = result;
     keyListener = new DeskTestKeyListener(this);
     keyListener.start();
   }
@@ -52,7 +51,7 @@ public class DeskTest {
     System.out.println();
     System.out.println();
     System.out.println();
-    for ()
+    for (int i=0;i<0;i++){}
   }
 
 }
