@@ -9,24 +9,15 @@ public class Search {
     return -1;
   }
 
-  public static int oldBinarySearch(int[] array, int key) {
+  public static int binarySearch(int[] array, int key) {
     int i = array.length/2;
     int step = i;
     do {
-      step /= 2;
+      step = (int) Math.ceil(step/2.0);
       i = array[i] < key ? i+step : i-step;
+      if (i<0 || i > array.length-1) return -1;
       if (array[i]==key) return i;
     } while (step>1);
-    return -1;
-  }
-
-  public static int binarySearch(int[] array, int key) {
-    int i = array.length/2;
-    int previ = 0;
-    do {
-      if (array[i]==key) return i;
-
-    } while (previ!=i);
     return -1;
   }
 
