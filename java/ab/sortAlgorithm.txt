@@ -1,0 +1,22 @@
+sortierung aufsteigend
+
+Aus den Daten wird ein Hierarchiebaum wie folgt erstellt:
+
+1. Das nächste Element der Datenreihe wird als letzter Knoten an den Baum angehängt
+2. Der Knoten wird mit dem Elternknoten verglichen; der kleinere Wert wird in den Elternknoten übernommen.
+3. + der neue Elternknoten ist die Basis goto 2
+   - goto 1
+
+Zum Aufbau der sortierten Datenreihe wird nun wie folgt vorgegangen:
+
+1. Der Wurzelknoten wird an das Array angehängt.
+2. Das entstandene "Loch" wird mit tem kleineren der beiden Kindknoten aufgefüllt.
+3. + & nicht am ende des Baumes goto 2
+   - goto 1
+
+Performance: 8 Daten
+
+best case 7+3+2+2+2+2+1+1
+          n-1+sum_{i=1}^{log_2(n)}(n+1-2^i)
+worst case (1+1+2+2+2+2+3)*2
+          2*sum_{i=1}^{log_2(n)}(n+1-2^i)
