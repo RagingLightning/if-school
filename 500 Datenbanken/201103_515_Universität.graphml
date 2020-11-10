@@ -74,7 +74,7 @@
     <node id="n3">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.small_entity">
-          <y:Geometry height="40.0" width="80.0" x="405.0" y="119.0"/>
+          <y:Geometry height="40.0" width="80.0" x="457.0000000000001" y="153.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.00390625" x="21.998046875" y="10.6494140625">Assist<y:LabelModel>
@@ -93,7 +93,7 @@
     <node id="n4">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.attribute">
-          <y:Geometry height="40.0" width="124.0" x="352.0" y="28.0"/>
+          <y:Geometry height="40.0" width="124.0" x="404.0000000000001" y="62.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" underlinedText="true" verticalTextPosition="bottom" visible="true" width="102.033203125" x="10.9833984375" y="10.6494140625">Personalnummer<y:LabelModel>
@@ -112,7 +112,7 @@
     <node id="n5">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.attribute">
-          <y:Geometry height="40.0" width="80.0" x="554.0" y="36.0"/>
+          <y:Geometry height="40.0" width="80.0" x="606.0000000000001" y="70.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="63.373046875" x="8.3134765625" y="10.6494140625">Fachgebiet<y:LabelModel>
@@ -150,7 +150,7 @@
     <node id="n7">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.attribute">
-          <y:Geometry height="40.0" width="80.0" x="535.0" y="160.0"/>
+          <y:Geometry height="40.0" width="80.0" x="587.0000000000001" y="194.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.009765625" x="21.9951171875" y="10.6494140625">Name<y:LabelModel>
@@ -416,10 +416,10 @@
     <node id="n21">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.attribute">
-          <y:Geometry height="40.0" width="80.0" x="405.0" y="179.0"/>
+          <y:Geometry height="40.0" width="119.0" x="436.0000000000001" y="213.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="38.0078125" x="20.99609375" y="10.6494140625">IDProf<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="103.375" x="7.8125" y="10.6494140625">PersonalnummerP<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
