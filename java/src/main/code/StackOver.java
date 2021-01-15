@@ -9,7 +9,7 @@ public class StackOver {
 
     Stack<String> stack = new Stack<>();
     while (true) {
-      stack.
+      stack.add("a");
     }
   }
 }
