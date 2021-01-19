@@ -20,11 +20,10 @@ public class Comeback {
     Input();
     ArrayConsole.MultiColumn multi = ArrayConsole.newMultiColumn();
     for (int m = 1; m <= 5; m++) {
-      int run = Years+((int)(Math.random()*10));
-      K_n = new double[run+1];
+      K_n = new double[Years+1];
       K_n[0] = K_0;
       if (Iter) {
-        for (int i = 1; i <= run; i++) {
+        for (int i = 1; i <= Years; i++) {
           K_n[i] = K_n[i - 1] * (1 + P*m / 100);
         }
         System.out.println(K_n[Years]);
