@@ -1,7 +1,5 @@
 package de.r13g.lib.desktest;
 
-import code.sem1.LottoZahlen;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -19,6 +17,7 @@ public class DeskTestKeyListener extends Thread
   {
     this.test = test;
     keyListener = new KeyListener();
+    this.setPriority(MAX_PRIORITY);
   }
 
   @Override

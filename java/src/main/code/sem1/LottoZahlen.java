@@ -22,7 +22,7 @@ public class LottoZahlen {
   public LottoZahlen() {
     int exp = 4;
     test = new DeskTest(new File(""), new TLottoZahlen(3,16), false);
-    test.getTask().resume();
+    test.getTask().step();
   }
 
   public static void main(String[] args) {
