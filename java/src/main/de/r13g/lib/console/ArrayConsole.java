@@ -118,6 +118,22 @@ public class ArrayConsole {
       System.out.println();
 
       //data
+      for (int i = 0; i < maxIndex; i++) {
+        for (int j = 0; j < String.valueOf(maxIndex).length()-String.valueOf(i).length(); j++) {
+          System.out.print(" ");
+        }
+        System.out.print(i);
+
+        for (String name : arrays.keySet()) {
+          System.out.print(" │ ");
+          int len = arrays.get(name).length > i ? String.valueOf(arrays.get(name)[i]).length() : 0;
+          for (int k = 0; k < colWidth.get(name) - len; k++) {
+            System.out.print(" ");
+          }
+          if (len > 0) System.out.print(arrays.get(name)[i]);
+        }
+        System.out.println();
+      }
 
     }
 
@@ -127,7 +143,7 @@ public class ArrayConsole {
       for (int i = 0; i < array.length; i++) {
         values[i] = String.valueOf(array[i]);
         if (maxLength != -1) values[i] = values[i].substring(0,maxLength-1);
-        colWidth.put(name, Math.max(values[i].length(), colWidth.getOrDefault(name, 0));
+        colWidth.put(name, Math.max(values[i].length(), colWidth.getOrDefault(name, 0)));
       }
       arrays.put(name, values);
       maxIndex = Math.max(maxIndex, array.length);
