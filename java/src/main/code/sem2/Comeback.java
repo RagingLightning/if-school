@@ -18,17 +18,23 @@ public class Comeback {
 
   Comeback() {
     Input();
-    K_n = new double[Years+1];
-    K_n[0] = K_0;
-    if (Iter) {
-      for (int i = 1; i <= Years; i++) {
-        K_n[i] = K_n[i-1] * (1+ P/100);
+    ArrayConsole.MultiColumn multi = ArrayConsole.newMultiColumn();
+    for (int m = 1; m <= 5; m++) {
+      int run = Years+((int)(Math.random()*10));
+      K_n = new double[run+1];
+      K_n[0] = K_0;
+      if (Iter) {
+        for (int i = 1; i <= run; i++) {
+          K_n[i] = K_n[i - 1] * (1 + P*m / 100);
+        }
+        System.out.println(K_n[Years]);
+      } else {
+        System.out.println(CalcK_n(Years));
       }
-      System.out.println(K_n[Years]);
-    } else {
-      System.out.println(CalcK_n(Years));
+      multi.addDoubleArray("p=" + (P * m), K_n, 5);
     }
-    ArrayConsole.printDoubleArray("K_n", K_n);
+    //ArrayConsole.printDoubleArray("K_n", K_n);
+    multi.print();
   }
 
   private double CalcK_n(int y) {

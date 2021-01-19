@@ -1,5 +1,7 @@
 package de.r13g.lib.console;
 
+import javafx.collections.ObservableList;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -110,7 +112,7 @@ public class ArrayConsole {
         System.out.print("─");
       }
       for (String name : arrays.keySet()) {
-        System.out.print("─┼─ ");
+        System.out.print("─┼─");
         for (int i = 0; i < colWidth.get(name); i++) {
           System.out.print("─");
         }
@@ -137,20 +139,58 @@ public class ArrayConsole {
 
     }
 
+    public void addIntArray(String name, int[] array) { addIntArray(name, array, -1); }
+
     public void addIntArray(String name, int[] array, int maxLength) {
+      Integer[] a = new Integer[array.length];
+      for (int i = 0; i < array.length; i++) {
+        a[i] = array[i];
+      }
+      addArray(name, a, maxLength);
+    }
+
+    public void addFloatArray(String name, float[] array) { addFloatArray(name, array, -1); }
+
+    public void addFloatArray(String name, float[] array, int maxLength) {
+      Float[] a = new Float[array.length];
+      for (int i = 0; i < array.length; i++) {
+        a[i] = array[i];
+      }
+      addArray(name, a, maxLength);
+    }
+
+    public void addDoubleArray(String name, double[] array) { addDoubleArray(name, array, -1); }
+
+    public void addDoubleArray(String name, double[] array, int maxLength) {
+      Double[] a = new Double[array.length];
+      for (int i = 0; i < array.length; i++) {
+        a[i] = array[i];
+      }
+      addArray(name, a, maxLength);
+    }
+
+    public void addBoolArray(String name, boolean[] array) { addBoolArray(name, array, -1); }
+
+    public void addBoolArray(String name, boolean[] array, int maxLength) {
+      String[] a = new String[array.length];
+      for (int i = 0; i < array.length; i++) {
+        a[i] = array[i] ? "true" : "false";
+      }
+      addArray(name, a, maxLength);
+    }
+
+    public <T extends Object> void addArray(String name, T[] array) { addArray(name, array, -1); }
+
+    public <T extends Object> void addArray(String name, T[] array, int maxLength) {
       name = name.trim();
       String[] values = new String[array.length];
       for (int i = 0; i < array.length; i++) {
         values[i] = String.valueOf(array[i]);
-        if (maxLength != -1) values[i] = values[i].substring(0,maxLength-1);
-        colWidth.put(name, Math.max(values[i].length(), colWidth.getOrDefault(name, 0)));
+        if (maxLength != -1 && values[i].length() > maxLength) values[i] = values[i].substring(0,maxLength);
+        colWidth.put(name, Math.max(values[i].length(), Math.max(name.length(), colWidth.getOrDefault(name, 0))));
       }
       arrays.put(name, values);
       maxIndex = Math.max(maxIndex, array.length);
-    }
-
-    public void addIntArray(String name, int[] array) {
-      addIntArray(name, array, -1);
     }
 
   }
