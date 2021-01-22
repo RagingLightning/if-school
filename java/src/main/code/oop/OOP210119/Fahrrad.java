@@ -58,4 +58,10 @@ public class Fahrrad {
     }
   }
 
+  public static void main(String[] args) {
+    Fahrrad f = new Fahrrad("ModelX", 3 ,21);
+    f.shiftUp();
+    f.shiftUp();
+  }
+
 }

@@ -32,7 +32,6 @@ public class Comeback {
       }
       multi.addDoubleArray("p=" + (P * m), K_n, 5);
     }
-    //ArrayConsole.printDoubleArray("K_n", K_n);
     multi.print();
   }
 
