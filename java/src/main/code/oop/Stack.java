@@ -1,20 +1,20 @@
 package code.oop;
 
-public class Stack<E> {
+public class Stack<T> {
 
-  java.util.Stack<E> base = new java.util.Stack<>();
+  java.util.Stack<T> base = new java.util.Stack<>();
 
   public Stack() { }
 
-  public E pop() {
+  public T pop() {
     return base.pop();
   }
 
-  public E peek() {
+  public T peek() {
     return base.peek();
   }
 
-  public void push(E item) {
+  public void push(T item) {
     base.push(item);
   }
 

@@ -121,7 +121,7 @@ public class Ex756 {
     s1 = invertStack(s2);
     s2 = new Stack<>();
 
-    "Ich bin ein String zum Testen von Ersetzungen an bestimmten Positionen".
+    String o = "Ich bin ein String zum Testen von Ersetzungen an bestimmten Positionen";
   }
 
   public void print(Queue q) {

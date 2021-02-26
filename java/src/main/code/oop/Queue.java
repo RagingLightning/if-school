@@ -2,21 +2,21 @@ package code.oop;
 
 import java.util.LinkedList;
 
-public class Queue<E> {
+public class Queue<T> {
 
-  private java.util.Queue<E> base = new LinkedList<E>();
+  private java.util.Queue<T> base = new LinkedList<T>();
 
   public Queue() { }
 
-  public E dequeue() {
+  public T dequeue() {
     return base.remove();
   }
 
-  public void enqueue(E item) {
+  public void enqueue(T item) {
     base.add(item);
   }
 
-  public E head() {
+  public T head() {
     return base.peek();
   }
 
