@@ -1,7 +1,5 @@
 package code.oop;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.HashMap;
 
 public class SearchTree<K extends Comparable,V> extends BinaryTree<K> {
@@ -102,17 +100,27 @@ public class SearchTree<K extends Comparable,V> extends BinaryTree<K> {
   }
 
   public V getMax(){
-    BinaryTree<K> tree = this;
-    while (tree.hasRight())
-      tree = tree.getRight();
-    return assign.get(tree.getValue());
+   return assign.get(getMaxNode(this).getValue());
+
+  }
+
+  private BinaryTree<K> getMaxNode(BinaryTree<K> root) {
+    while (root.hasRight())
+      root = root.getRight();
+    return root;
   }
 
   public V getPrior(K needle) {
     BinaryTree<K> node = searchTreeNode(this, needle);
     BinaryTree<K> parent = getParentNode(this, node);
     if (!parent.hasLeft()) return assign.get(parent.getValue());
-
+    if (parent.getLeft() != node) return assign.get(getMaxNode(parent.getLeft()).getValue());
+    while (parent.hasLeft() && parent.getLeft() == node) {
+      node = parent;
+      parent = getParentNode(this, parent);
+    }
+    if (parent.hasLeft()) return assign.get(getMaxNode(parent.getLeft()).getValue());
+    return assign.get(parent.getValue());
   }
 
 }
