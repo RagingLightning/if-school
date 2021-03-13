@@ -1,5 +1,7 @@
 package code.oop;
 
+import sun.misc.Queue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,5 +86,14 @@ public class BinaryTree<V> {
     if (hasValue())
       traverse.add(getValue());
     return traverse;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder b = new StringBuilder();
+    for (V v : traverseInOrder()) {
+      b.append(v.toString()).append("--");
+    }
+    return b.toString();
   }
 }
