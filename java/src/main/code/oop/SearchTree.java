@@ -110,12 +110,31 @@ public class SearchTree<K extends Comparable,V> extends BinaryTree<K> {
     return root;
   }
 
+  private BinaryTree<K> getMinNode(BinaryTree<K> root) {
+    while (root.hasLeft())
+      root = root.getLeft();
+    return root;
+  }
+
   public V getPrior(K needle) {
     BinaryTree<K> node = searchTreeNode(this, needle);
     BinaryTree<K> parent = getParentNode(this, node);
     if (!parent.hasLeft()) return assign.get(parent.getValue());
     if (parent.getLeft() != node) return assign.get(getMaxNode(parent.getLeft()).getValue());
     while (parent.hasLeft() && parent.getLeft() == node) {
+      node = parent;
+      parent = getParentNode(this, parent);
+    }
+    if (parent.hasLeft()) return assign.get(getMaxNode(parent.getLeft()).getValue());
+    return assign.get(parent.getValue());
+  }
+
+  public V getNext(K needle) {
+    BinaryTree<K> node = searchTreeNode(this, needle);
+    BinaryTree<K> parent = getParentNode(this, node);
+    if (!parent.hasRight()) return assign.get(parent.getValue());
+    if (parent.getLeft() != node) return assign.get(getMinNode(parent.getRight()).getValue());
+    while (parent.hasRight() && parent.getRight() == node) {
       node = parent;
       parent = getParentNode(this, parent);
     }
